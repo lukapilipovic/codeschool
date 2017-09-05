@@ -1,0 +1,31 @@
+<html>
+<head>
+	<script src="js/speedTest.js"></script>
+	<script type="text/javascript">
+		
+	function cycle(field){
+
+		var field1 = 50;
+		
+		for (var i = 0; i < field1; i++){
+			console.log("Current cycle is "  + i + " of " + field1);
+		} 
+	}
+
+    
+
+
+	</script>
+</head>
+<body><input type="text" id="someNumber" value="50">
+
+<script type="text/javascript">
+	console.time("Testing time");
+	//cycle('someNumber');
+	var tT = new SpeedTest(cycle, 'someNumber', 5000);
+    tT.startTest();
+    console.timeEnd("Testing time");
+
+</script>
+</body>
+</html>
