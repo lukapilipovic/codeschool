@@ -1,30 +1,31 @@
 <html>
 <head>
-	<script src="js/speedTest.js"></script>
-	<script type="text/javascript">
-		
-	function cycle(field){
-
-		var field1 = 50;
-		
-		for (var i = 0; i < field1; i++){
-			console.log("Current cycle is "  + i + " of " + field1);
-		} 
-	}
-
-    
-
-
-	</script>
+	<script src="js/flyingObject.js"></script>
+	<script src="js/plane.js"></script>
+	
 </head>
-<body><input type="text" id="someNumber" value="50">
+<body>
 
 <script type="text/javascript">
-	console.time("Testing time");
-	//cycle('someNumber');
-	var tT = new SpeedTest(cycle, 'someNumber', 5000);
-    tT.startTest();
-    console.timeEnd("Testing time");
+	
+	import { Plane } from 'js/plane.js';
+
+	let plane = new Plane("Plane");
+	plane.fly();
+
+
+	let passengerList = [ { name: "Marko", lastName : "Markovic" },
+						  { name: "Petar", lastName : "Petrovic" }
+
+						];
+
+	plane.boardPassengers(passengerList);
+
+	bird = new FlyingObject("Bird");
+
+
+    console.log(plane.name + " " + (plane instanceof FlyingObject || "is not a plane"));
+    console.log(bird.name + " " + (bird instanceof Plane || "is not a plane"));
 
 </script>
 </body>
